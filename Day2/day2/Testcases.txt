@@ -1,0 +1,28 @@
+=================
+DAY 2 - LOGIN PAGE TEST CASES
+=================
+
+TC001 | Positive Test
+Test Scenario: Verify login with valid username and valid password
+Test Steps: 1. Enter Username: admin 2. Enter Password: admin123 3. Click Login button
+Test Data: Username=admin, Password=admin123
+Expected Result: User should login successfully and redirect to Home Page
+Status: Pass
+
+--------------------------------------------------
+
+TC002 | Negative Test  
+Test Scenario: Verify login with invalid password
+Test Steps: 1. Enter Username: admin  2. Enter Password: wrong123  3. Click Login button
+Test Data: Username=admin, Password=wrong123
+Expected Result: Error message "Invalid username or password" should be displayed
+Status: Pass
+
+--------------------------------------------------
+
+TC003 | Edge Test
+Test Scenario: Verify login with empty username and password
+Test Steps: 1. Keep Username empty 2. Keep Password empty 3. Click Login button
+Test Data: Username= , Password= 
+Expected Result: Validation message "Username and Password are required" should be displayed
+Status: Pass
