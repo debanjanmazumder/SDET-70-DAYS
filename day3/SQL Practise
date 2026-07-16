@@ -1,0 +1,35 @@
+CREATE DATABASE Day3_Practice;
+USE Day3_Practice;
+
+DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Users;
+
+-- Step 1: Create 2 Tables
+CREATE TABLE Users (
+    id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+CREATE TABLE Orders (
+    id INT PRIMARY KEY,
+    product VARCHAR(50),
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+-- Step 2: Insert Data
+INSERT INTO Users VALUES (1, 'Rahul'), (2, 'Priya'), (3, 'Amit');
+INSERT INTO Orders VALUES (101, 'Laptop', 1), (102, 'Phone', 1), (103, 'Mouse', 2);
+
+-- Step 3: RUN JOINS
+-- 1. INNER JOIN - only matching records
+SELECT Users.name, Orders.product
+FROM Users INNER JOIN Orders ON Users.id = Orders.user_id;
+
+-- 2. LEFT JOIN - all users + orders if any
+SELECT Users.name, Orders.product
+FROM Users LEFT JOIN Orders ON Users.id = Orders.user_id;
+
+SELECT Users.name
+FROM Users LEFT JOIN Orders ON Users.id = Orders.user_id
+WHERE Orders.id IS NULL;
