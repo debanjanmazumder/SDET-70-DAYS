@@ -1,0 +1,114 @@
+=================================================================
+                    DAY 3 - BUG REPORT & TEST CASES
+                    Project: SDET-70-DAYS
+                    Module: Login Functionality
+                    Date: 14-July-2025
+=================================================================
+
+-------------------------
+BUG REPORT - BUG-003
+-------------------------
+Bug ID : BUG-003
+Project Name : E-Commerce Application
+Module : User Login
+Title : Application crashes when Password field is left blank
+Severity : Critical
+Priority : High
+Status : New
+Reported By : QA Engineer
+Reported Date : 14-July-2025
+Environment : OS: Android 13 | Device: Samsung M33 | App Version: 2.1.0
+
+Description:
+The application crashes and closes unexpectedly when a user attempts to 
+login with a valid email but keeps the password field blank.
+
+Steps to Reproduce:
+1. Launch the E-Commerce Application
+2. Navigate to the Login Screen
+3. Enter a valid Email ID in the Email field
+4. Leave the Password field blank
+5. Click on the "Login" button
+
+Expected Result:
+The application should display a validation error message: 
+"Password is required" and should remain on the login screen.
+
+Actual Result:
+The application crashes and closes immediately after clicking the Login button.
+
+Attachments : Screenshot attached - Crash_Log_BUG003.png
+Notes : This is a showstopper bug. Users cannot login without password.
+
+=================================================================
+
+-------------------------
+TEST CASES FOR LOGIN MODULE
+-------------------------
+
+Test Case ID : TC_LOGIN_001
+Test Case Name: Verify login with valid Email and valid Password
+Precondition : User is on Login Screen
+Test Data : Email: rahul@test.com | Password: Rahul@123
+Test Steps : 1. Enter valid Email
+                2. Enter valid Password
+                3. Click Login button
+Expected Result: User should be successfully logged in and redirected to Dashboard
+Actual Result : 
+Status : 
+Priority : High
+
+
+Test Case ID : TC_LOGIN_002
+Test Case Name: Verify login with valid Email and blank Password
+Precondition : User is on Login Screen
+Test Data : Email: rahul@test.com | Password: [Blank]
+Test Steps : 1. Enter valid Email
+                2. Keep Password field blank
+                3. Click Login button
+Expected Result: Application should show error "Password is required"
+Actual Result : Application crashes - BUG-003
+Status : Failed
+Priority : Critical
+
+
+Test Case ID : TC_LOGIN_003
+Test Case Name: Verify login with blank Email and valid Password
+Precondition : User is on Login Screen
+Test Data : Email: [Blank] | Password: Rahul@123
+Test Steps : 1. Keep Email field blank
+                2. Enter valid Password
+                3. Click Login button
+Expected Result: Application should show error "Email is required"
+Actual Result : 
+Status : 
+Priority : High
+
+
+Test Case ID : TC_LOGIN_004
+Test Case Name: Verify login with invalid Email and valid Password
+Precondition : User is on Login Screen
+Test Data : Email: invalid@test.com | Password: Rahul@123
+Test Steps : 1. Enter invalid Email
+                2. Enter valid Password
+                3. Click Login button
+Expected Result: Application should show error "Invalid credentials"
+Actual Result : 
+Status : 
+Priority : Medium
+
+
+Test Case ID : TC_LOGIN_005
+Test Case Name: Verify login with both fields blank
+Precondition : User is on Login Screen
+Test Data : Email: [Blank] | Password: [Blank]
+Test Steps : 1. Keep both fields blank
+                2. Click Login button
+Expected Result: Application should show error "Email and Password are required"
+Actual Result : 
+Status : 
+Priority : High
+
+=================================================================
+END OF DAY 3 DELIVERABLE
+=================================================================
