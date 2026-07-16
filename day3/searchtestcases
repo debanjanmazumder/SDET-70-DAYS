@@ -1,0 +1,17 @@
+package day3;
+
+public class day3searchtc {
+    public static void main(String[] args) {
+        String[] testCases = {"Login", "Logout", "Search", "Payment"};
+        String search = "Search";
+        boolean found = false;
+
+        for(String tc : testCases) {
+            if(tc.equals(search)) {
+                found = true;
+                break;
+            }
+        }
+        System.out.println("Test 'Search' Found: " + found);
+    }
+}
