@@ -1,0 +1,14 @@
+package day3;
+
+public class day3highestbugday {
+    public static void main(String[] args) { 
+        int[] bugs = {5, 12, 3, 8};
+        int max = bugs[0];
+        for(int i = 1; i < bugs.length; i++) {
+            if(bugs[i] > max) {
+                max = bugs[i];
+            }
+        }
+        System.out.println("Max Bugs in 1 day: " + max);
+    } 
+}
